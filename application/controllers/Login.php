@@ -38,6 +38,7 @@ class Login extends CI_Controller {
 		// Load database
 		$this->load->model('login_database');
 	}
+	
 	public function index()
 	{
 		$this->load->view('login_form');
