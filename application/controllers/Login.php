@@ -38,6 +38,7 @@ class Login extends CI_Controller {
 		// Load database
 		$this->load->model('login_database');
 	}
+	
 	public function index()
 	{
 		$this->load->view('login_form');
@@ -46,8 +47,8 @@ class Login extends CI_Controller {
 	public function user_login_process() 
 	{
 
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_rules('EMAIL', 'Email', 'trim|required');
+		$this->form_validation->set_rules('PASS', 'Password', 'trim|required');
 
 		if ($this->form_validation->run() == FALSE) 
 		{
@@ -59,20 +60,20 @@ class Login extends CI_Controller {
 		}else 
 		{
 			$data = array(
-			'username' => $this->input->post('username'),
-			'password' => $this->input->post('password')
+			'EMAIL' => $this->input->post('EMAIL'),
+			'PASS' => $this->input->post('PASS')
 			);
 			$result = $this->login_database->login($data);
 			if ($result == TRUE) 
 			{
 
-				$username = $this->input->post('username');
-				$result = $this->login_database->read_user_information($username);
+				$email = $this->input->post('EMAIL');
+				$result = $this->login_database->read_user_information($email);
 				if ($result != false) 
 				{
 					$session_data = array(
-					'username' => $result[0]->user_name,
-					'email' => $result[0]->user_email,
+					
+					'EMAIL' => $result[0]->user_email,
 					);
 					// Add user data in session
 					$this->session->set_userdata('logged_in', $session_data);
@@ -81,7 +82,7 @@ class Login extends CI_Controller {
 			}else 
 			{
 				$data = array(
-				'error_message' => 'Invalid Username or Password'
+				'error_message' => 'Invalid Email or Password'
 				);
 				$this->load->view('login_form', $data);
 			}
@@ -94,7 +95,7 @@ class Login extends CI_Controller {
 
 		// Removing session data
 		$sess_array = array(
-		'username' => ''
+		'EMAIL' => ''
 		);
 		$this->session->unset_userdata('logged_in', $sess_array);
 		$data['message_display'] = 'Successfully Logout';
