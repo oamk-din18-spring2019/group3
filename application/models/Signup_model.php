@@ -1,31 +1,29 @@
 <?php
 
-Class Signup_model extends CI_Model
+Class Signup_model extends CI_Model {
 
-{
+// Insert registration data in database
+public function registration_insert($data) {
 
+// Query to check whether username already exist or not
+$condition = "EMAIL =" . "'" . $data['EMAIL'] . "'";
+$this->db->select('*');
+$this->db->from('users');
+$this->db->where($condition);
+$this->db->limit(1);
+$query = $this->db->get();
+if ($query->num_rows() == 0) {
 
-function get_users()
-{
-    $this->db->select('*');
-    $this->db->from('users');
-    return $this->db->get()->result_array();
+// Query to insert data in database
+$this->db->insert('users', $data);
+if ($this->db->affected_rows() > 0) {
+return true;
+}
+} else {
+return false;
+}
+}
 
 }
 
-function add_user($insert_data)
-{
-    $this->db->db_debug = false;
-    $this->db->insert('users',$insert_data);
-    $test=$this->db->affected_rows();
-    if($test ==1)
-    {
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-
-
-}
+?>

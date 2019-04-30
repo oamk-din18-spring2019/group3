@@ -5,7 +5,7 @@ Class Login_Database extends CI_Model {
 	// Read data using username and password
 	public function login($data) {
 
-		$condition = "user_email =" . "'" . $data['EMAIL'] . "' AND " . "user_password =" . "'" . $data['PASS'] . "'";
+		$condition = "Email =" . "'" . $data['EMAIL'] . "' AND " . "Password =" . "'" . $data['PASS'] . "'";
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where($condition);
@@ -24,7 +24,7 @@ Class Login_Database extends CI_Model {
 	public function read_user_information($email)
 	{
 
-		$condition = "user_email =" . "'" . $email . "'";
+		$condition = "Email =" . "'" . $email . "'";
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where($condition);
