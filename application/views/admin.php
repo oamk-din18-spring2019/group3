@@ -55,7 +55,7 @@ th {text-align: left;}
     <p><?php if(isset($message)){ echo $message; } ?></p>
 </div>
 <div class="row">
-    <a class="button" href="<?php echo base_url().'index.php/flightForm'?>">Insert Flight</a>
+    <a class="button" href="<?php echo 'flightForm'?>">Insert Flight</a>
 </div>
 <?php
 $result = $this->admin_database->flights();

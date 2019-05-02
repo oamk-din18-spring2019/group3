@@ -56,10 +56,10 @@ class Admin extends CI_Controller {
 		$insert = $this->admin_database->insertNewFlight($data);
 		if($insert != false){
 			$this->session->set_userdata('message','Record inserted successfuly!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}else{
 			$this->session->set_userdata('message','Some thing went wrong.Please try again!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}
 	}
 	// edit the flight schedual
@@ -86,10 +86,10 @@ class Admin extends CI_Controller {
 		if($update != false)
 		{
 			$this->session->set_userdata('message','Record updated successfuly!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}else{
 			$this->session->set_userdata('message','Some thing went wrong.Please try again!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}
 	}
 	// delete a flight on the basis of flight id
@@ -99,10 +99,10 @@ class Admin extends CI_Controller {
 		// var_dump($destroy);
 		// die;
 			$this->session->set_userdata('message','Record deleted successfuly!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}else{
 			$this->session->set_userdata('message','Record deleted successfuly!');
-			redirect('admin');
+			redirect('Admin/admin');
 		}
 	}
 	public function admin(){
