@@ -58,6 +58,21 @@ Class Admin_Database extends CI_Model {
     		return false;
     	}
 	}
+
+	public function search_fid($id,$id1,$id2){
+		$condition = "city_from="."'".$id."' and city_to='".$id1."' and time='".$id2."'";
+		$this->db->select('*');
+		$this->db->from('flight');
+		$this->db->where($condition);
+		$query = $this->db->get();
+		if ($query->num_rows() > 0) 
+		{
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
 }
 
 ?>

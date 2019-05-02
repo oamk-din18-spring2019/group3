@@ -1,6 +1,25 @@
 <?php
 class Checkout extends CI_Controller
 {
+    public function __construct() 
+    {
+                parent::__construct();
+                // Load form helper library
+                $this->load->helper('form');
+                $this->load->helper('url');
+
+                // Load Database
+                $this->load->database();
+
+                // Load form validation library
+                $this->load->library('form_validation');
+
+                // Load session library
+                $this->load->library('session');
+
+                // Load database
+                $this->load->model('user_database');
+        }
     function _remap($method, $args) // this function lets us take the cities and departure time as arguments from the url
     {
         if(method_exists($this, $method))
