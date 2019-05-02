@@ -84,13 +84,14 @@ th {text-align: left;}
 <div class="container">
 <?php
 $result = $this->admin_database->flights();
-echo '<table class="table table-hover"> <thead> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Time</th> <th>price</th> <th>edit</th> <th>delete</th> </tr> </thead>';
+echo '<table class="table table-hover"> <thead> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Departure Time</th> <th>Arrival Time</th> <th>price</th> <th>edit</th> <th>delete</th> </tr> </thead>';
 if($result){
 foreach($result->result() as $row) {
     echo "<tr>";
     echo "<td>" . $row->city_from . "</td>";
     echo "<td>" . $row->city_to . "</td>";
     echo "<td>" . $row->time . "</td>";
+    echo "<td>" . $row->artime . "</td>";
     echo "<td>" . $row->price . "</td>";
     echo "<td><a href=edit/".$row->fid.">edit</a></td>";
     echo "<td><a href=delete/".$row->fid.">delete</a></td>";
