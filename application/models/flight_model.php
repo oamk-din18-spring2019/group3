@@ -1,6 +1,6 @@
 <?php
 
-class Flight_model extends CI_Model
+class flight_model extends CI_Model
 {
     public function __construct()
     {
@@ -34,6 +34,20 @@ class Flight_model extends CI_Model
         $query = $this->db->get_where('flight', array('city_from' => $from, 'city_to' => $to));
 
         return $query->result_array();
+    }
+
+    public function flight_exists($from = FALSE, $to = FALSE, $time = FALSE) // check if this flight really exists or if the user
+    {                                                                       // has typed in some random flight info into the URL
+        if($from === FALSE || $to === FALSE || $time === FALSE)
+        {
+            return FALSE;
+        }
+
+        $query = $this->db->get_where('flight', array('city_from' => $from, 'city_to' => $to, 'time' => $time));
+        
+        if(count($query->result_array()) > 0)
+            return TRUE;
+        return FALSE;
     }
 }
 
