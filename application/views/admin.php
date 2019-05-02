@@ -1,7 +1,7 @@
 <?php 
 if (isset($this->session->userdata['logged_in'])) {
 
-$email = ($this->session->userdata['logged_in']['EMAIL']);
+$Email = ($this->session->userdata['logged_in']['EMAIL']);
 } else {
 header("location: login");
 }

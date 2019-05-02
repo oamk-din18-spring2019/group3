@@ -1,7 +1,7 @@
 <?php
 // defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+Class Admin extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -107,3 +107,5 @@ class Admin extends CI_Controller {
 	}
 
 }
+
+?>

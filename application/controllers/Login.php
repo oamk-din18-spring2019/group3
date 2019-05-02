@@ -67,13 +67,13 @@ class Login extends CI_Controller {
 			if ($result == TRUE) 
 			{
 
-				$email = $this->input->post('Email');
-				$result = $this->login_database->read_user_information($email);
+				$Email = $this->input->post('Email');
+				$result = $this->login_database->read_user_information($Email);
 				if ($result != false) 
 				{
 					$session_data = array(
 					
-					'Email' => $result[0]->user_email,
+					'Email' => $result[0]->EMAIL,
 					);
 					// Add user data in session
 					$this->session->set_userdata('logged_in', $session_data);

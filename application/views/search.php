@@ -1,4 +1,4 @@
-<h2><?= $title ?></h2>
+
 
 <html>
 
@@ -32,7 +32,12 @@
 
 
 <br><br><br>
-<button type="button" onclick="confirmSearch()">Go</button>
+<button type="button" onclick="confirmSearch()">Go</button><br>
+<br>
+<br>
+<?php echo form_open('Account/index'); ?>
+<input type="submit"  value="Account">
+<?php echo form_close();?>
 
 
 <!-- when button is clicked, we redirect the page to something like flights/helsinki/oulu -->
