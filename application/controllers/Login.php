@@ -73,11 +73,16 @@ class Login extends CI_Controller {
 				{
 					$session_data = array(
 					
-					'Email' => $result[0]->user_email,
+					'Email' => $result[0]->EMAIL,
 					);
 					// Add user data in session
 					$this->session->set_userdata('logged_in', $session_data);
-					$this->load->view('search');
+					if($result[0]->userType == 'ADMIN'){
+						redirect('Admin/admin');
+					}
+					if($result[0]->userType == 'USER'){
+						$this->load->view('search');
+					}
 				}
 			}else 
 			{

@@ -11,14 +11,14 @@ class Flight_model extends CI_Model
 
     function get_all_city_from() // for choosing what city you are in (drop-down menu)
     {
-        $query = $this->db->query('SELECT DISTINCT city_from FROM flights');
+        $query = $this->db->query('SELECT DISTINCT city_from FROM flight');
 
         return $query->result();
     }
 
     function get_all_city_to() // for choosing what city you go to (drop-down menu)
     {
-        $query = $this->db->query('SELECT DISTINCT city_to FROM flights');
+        $query = $this->db->query('SELECT DISTINCT city_to FROM flight');
 
         return $query->result();
     }
@@ -31,7 +31,7 @@ class Flight_model extends CI_Model
             return FALSE;
         }
 
-        $query = $this->db->get_where('flights', array('city_from' => $from, 'city_to' => $to));
+        $query = $this->db->get_where('flight', array('city_from' => $from, 'city_to' => $to));
 
         return $query->result_array();
     }

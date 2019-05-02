@@ -1,15 +1,16 @@
 <?php 
-if (isset($this->session->userdata['logged_in'])) {
+/*if (isset($this->session->userdata['logged_in'])) {
 
-$email = ($this->session->userdata['logged_in']['EMAIL']);
+$Email = ($this->session->userdata['logged_in']['EMAIL']);
 } else {
 header("location: login");
 }
 
 if (isset($this->session->userdata['message'])){
     $message = ($this->session->userdata['message']);
-}
+}*/
 ?>
+///
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +58,7 @@ th {text-align: left;}
     <a class="button" href="<?php echo base_url().'index.php/flightForm'?>">Insert Flight</a>
 </div>
 <?php
+$result = $this->admin_database->flights();
 echo '<table> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Time</th> <th>price</th> <th>edit</th> <th>delete</th> </tr>';
 if($result){
 foreach($result->result() as $row) {

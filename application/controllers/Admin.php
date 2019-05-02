@@ -105,5 +105,8 @@ class Admin extends CI_Controller {
 			redirect('admin');
 		}
 	}
-
+	public function admin(){
+		$result = $this->admin_database->flights();
+		$this->load->view('admin');
+	}
 }
