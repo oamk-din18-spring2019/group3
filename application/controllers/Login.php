@@ -81,7 +81,7 @@ class Login extends CI_Controller {
 						redirect('Admin/admin');
 					}
 					if($result[0]->userType == 'USER'){
-						$this->load->view('search');
+						redirect('Search/index');
 					}
 				}
 			}else 

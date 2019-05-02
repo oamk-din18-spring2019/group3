@@ -48,9 +48,9 @@ class Search extends CI_Controller
         $data['cityfrom'] = $this->flight_model->get_all_city_from();
         $data['cityto'] = $this->flight_model->get_all_city_to();
         
-        $this->load->view('templates/header');
+        //$this->load->view('templates/header');
         $this->load->view('search', $data);
-        $this->load->view('templates/footer');  
+        //$this->load->view('templates/footer');  
     }
 
 }

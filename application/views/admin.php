@@ -10,22 +10,46 @@ if (isset($this->session->userdata['message'])){
     $message = ($this->session->userdata['message']);
 }*/
 ?>
-///
+
 <!DOCTYPE html>
 <html>
 <head>
 <style>
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+thead {
+    th {
+        background-color: #55608f;
+    }
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
-table, td, th {
-    border: 1px solid black;
-    padding: 5px;
+td, th {
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    color: #fff;
 }
 
 th {text-align: left;}
+
+.table-hover thead tr:hover th, .table-hover tbody tr:hover td {
+    background-color:  rgba(255,255,255,0.4);
+}
 
 .message{
     color:#EC80FF;
@@ -57,9 +81,10 @@ th {text-align: left;}
 <div class="row">
     <a class="button" href="<?php echo 'flightForm'?>">Insert Flight</a>
 </div>
+<div class="container">
 <?php
 $result = $this->admin_database->flights();
-echo '<table> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Time</th> <th>price</th> <th>edit</th> <th>delete</th> </tr>';
+echo '<table class="table table-hover"> <thead> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Time</th> <th>price</th> <th>edit</th> <th>delete</th> </tr> </thead>';
 if($result){
 foreach($result->result() as $row) {
     echo "<tr>";
@@ -73,6 +98,7 @@ foreach($result->result() as $row) {
 }}
 echo "</table>";
 ?>
+</div>
 <div class="row">
     <a class="button" href="<?php echo base_url().'index.php/logout'?>">Logout</a>
 </div>

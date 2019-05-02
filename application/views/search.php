@@ -55,11 +55,11 @@
             var current_url = window.location.href;
             var new_url = 'flights/' + from_string + '/' + to_string + '/';
 
-            if(current_url.includes("search/"))
-                current_url = current_url.replace("search/", new_url);
+            if(current_url.includes("Search/"))
+                current_url = current_url.replace("Search/", new_url);
 
             else
-                current_url = current_url.replace("search", new_url);
+                current_url = current_url.replace("Search", new_url);
 
             window.location.href = current_url;
         }
