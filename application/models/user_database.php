@@ -1,5 +1,5 @@
 <?php
-Class User_Database extends CI_Model {
+Class user_database extends CI_Model {
         public function usersInfo(){
                 $this->db->select('*');
                 $this->db->from('users');
