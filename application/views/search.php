@@ -4,7 +4,7 @@
     <title></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <style type="text/css">
-.pic{background-image: url("https://thewallpaper.co/wp-content/uploads/2016/02/hd-plane-wallpapers-sky-aircraft-wings-vehicle-clouds-free-aircraft-images-high-resolution-airplanes-2560x1600.jpg");  background-position: center; background-repeat: no-repeat;  height: 100%}
+.pic{background-image: url("https://www.infodynamic.net/img/slides/slide02.jpg");  background-position: center; background-repeat: no-repeat;  height: 100%}
 .paywall{height:100%;position:relative;min-width:1000px}
 .paywall__auth{width:100%;height:100%;display:flex;align-items:flex-start;justify-content:center;padding:0 30px 30px}
 .paywall__auth__row.login{width:804px;min-height:480px;display:flex;flex-direction:row;justify-content:center}
@@ -51,7 +51,7 @@
 .paywall__auth__form__row{ position:relative ; padding: 7px; border-radius: 25px;}
 .paywall__auth__form__row_margin{margin-top:15px}
 .paywall__auth__form__input-wrap{position:relative}
-.paywall__auth__form__input-wrap_radius{border: 1px solid;position: relative;border-radius:10px 10px 10px 10px}
+.paywall__auth__form__input-wrap_radius{}
 .paywall__auth__form__input{background-color:white;width:100%;line-height:1;border:none;border-radius:10px;outline:0;height:44px;padding:0 15px;font-size:14px}
 .paywall__auth__form__input::-webkit-input-placeholder{color:#bbb}
 .paywall__auth__form__input::-moz-placeholder{color:#bbb;opacity:1;-moz-opacity:1}
@@ -64,7 +64,10 @@
 .paywall__auth__form__submit::-moz-focus-inner{border:0}.paywall__auth__form__submit:hover{background:rgb(95,160,164)}.paywall__auth__form__checkbox{position:relative;margin-top:13px}.paywall__auth__form__checkbox__label{min-height:22px;font-size:14px;line-height:16px;color:#bbb}
 .paywall__auth__form__checkbox__input[type=checkbox]{position:absolute;left:-9999px;opacity:0}
 .paywall__auth__form__checkbox__input[type=checkbox]~.paywall__auth__form__checkbox__label{display:inline-block;vertical-align:top;margin:0;padding:2px 0 0 29px;background:url(//s.rbk.ru/v1_paywall_static/common/common-p.1.1.14/styles/images/checkbox.svg) no-repeat 0 0;background-size:19px 19px;cursor:pointer}.paywall__auth__form__checkbox__input[type=checkbox]:checked~.paywall__auth__form__checkbox__label{background:url(//s.rbk.ru/v1_paywall_static/common/common-p.1.1.14/styles/images/checkbox-active.svg) no-repeat 0 0;background-size:19px 19px}.paywall__auth__form__checkbox__link{color:#bbb;border-bottom:1px solid #ddd}.paywall__auth__form__checkbox__link:hover{border-color:transparent}.paywall__auth__form__alert{display:none;color:#f44;font-size:14px;line-height:16px;margin-top:7px;margin-bottom:12px}.paywall__auth__form__recaptcha{margin-top:20px}.paywall__auth__adv{text-align:center;border:1px solid #ddd;border-bottom:none;border-radius:3px;overflow:hidden}.paywall__auth__adv__inner{padding:21px 30px 0}.paywall__auth__adv__title{margin-bottom:20px;font-size:34px;line-height:1;font-family:GraphikCy-Semibold,'Helvetica CY',Arial,sans-serif}.paywall__auth__adv__text{font-size:18px;line-height:22px;letter-spacing:-.3px;margin-bottom:25px}.paywall__auth__adv__price{border-top:1px solid #ddd;font-size:80px;line-height:1;font-family:GraphikCy-Semibold,'Helvetica CY',Arial,sans-serif;letter-spacing:-.95px;padding:38px 0}.paywall__auth__adv__button{display:block;cursor:pointer;background:#1b8;color:#fff;font-size:24px;line-height:1;padding:33px 0;font-family:GraphikCy-Semibold,'Helvetica CY',Arial,sans-serif}.paywall__auth__link{color:#1b8}.paywall__auth__link:hover{color:#222}.paywall__auth__main.disabled{cursor:default;pointer-events:none}.disabled .paywall__auth{cursor:default;pointer-events:none}.disabled .paywall__auth__tabs__item{color:#bbb}.disabled .paywall__auth__tabs__item:hover:not(.active){opacity:1}.disabled .paywall__auth__form__recaptcha,.disabled .paywall__auth__social__link{opacity:.65}.disabled .paywall__auth__social__link:hover{opacity:1}.disabled .paywall__auth__form__submit{background:#b7eadb;cursor:default}.disabled .paywall__auth__form__submit:hover{background:#b7eadb}.paywall__auth__form-wrap{background-color:#F5F5F5; padding: 7px; border-radius: 25px}
-    	</style>
+  .test{height: 25px;width:100px;border-radius: 10px 10px 10px 10px;}  
+  .test2{height: 25px;width:100px;border-radius: 10px 10px 10px 10px;margin-bottom:10%} 
+  
+        </style>
 
 </head>
 
@@ -76,50 +79,55 @@
 	            <div class="paywall__auth__col paywall__auth__col_right">
 	                <div class="paywall__auth__block">
 	                    <div class="paywall__auth__main js-paywall-auth-main">
-	                        <div class="paywall__auth__title"><h2>Create your account<h2></div>
+	                        <div class="paywall__auth__title"><h2>Please fill in your details for your flight<h2></div>
 	                            <div class="paywall__auth__tab-content active js-paywall-tab-content">
 	                            <div class="paywall__auth__form-wrap">
-                                    <?php echo form_open('Signup/new_user_registration'); ?>
-                                    <div class="paywall__auth__form__row"><h4>First Name</h4>
+                                    
+                                    <div class="paywall__auth__form__row"><h3>From:</h3>
 	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="FirstName" id="FirstName" value="" required="yes" autocapitalize="off" autocomplete="off" placeholder="First Name">
+                                            <select class="test" id="s_from">
+            <?php 
+            for($i=0; $i<count($cityfrom); ++$i)
+            {
+              echo '<option value="'.$cityfrom[$i]->city_from.'">'.$cityfrom[$i]->city_from.'</option>';
+            }
+            ?>
+</select>
                                             </div>
                                     </div>
-                                            <div class="paywall__auth__form__row"><h4>Last Name</h4>
+                                            <div class="paywall__auth__form__row"><h3>To:</h3>
 	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="LastName" id="LastName" value="" required="yes" autocapitalize="off" autocomplete="off" placeholder="Last Name" >
+                                            <select class="test" id="s_to">
+            <?php 
+            for($i=0; $i<count($cityto); ++$i)
+            { 
+              echo '<option value="'.$cityto[$i]->city_from.'">'.$cityto[$i]->city_to.'</option>';
+            }
+            ?>
+</select>
                                             </div>  
 	                                    </div>
-	                                    <div class="paywall__auth__form__row"><h4>Email Address</h4>
+	                                    <div class="paywall__auth__form__row"><h3>Number of passengers:</h3>
 	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="Email" id="Email" value="" required="yes" autocapitalize="off" autocomplete="off" placeholder="E-mail" >
+                                            <select class="test2" id="s_num">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+</select>
 	                                        </div>
-                                        </div>
-                                        <div class="paywall__auth__form__row"><h4>Address</h4>
-	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="Address" id="Address" value="" required="" autocapitalize="off" autocomplete="off" placeholder="Current Address" >
-	                                        </div>  
-                                        </div>
-                                        <div class="paywall__auth__form__row"><h4>Post Code</h4>
-	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="PostCode" id="PostCode" value="" required="" autocapitalize="off" autocomplete="off" placeholder="Post Code" method="post" >
-                                            </div> 
-                                        </div>
-	                                    <div class="paywall__auth__form__row"><h4>Password</h4>
-                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="password" name="Password" id="Password" value="" required="yes" autocapitalize="off" placeholder="Password"> 
-                                            </div>
                                         </div>
                                         
                                         
                                     </div>
                                         <div class="submit_form">
 	                                    <div class="paywall__auth__form__submit-wrap"><br>
-	                                        <input type="submit" class="paywall__auth__form__submit" value="Login">
+                                        <button class="paywall__auth__form__submit"  type="button" onclick="confirmSearch()">Go</button>
                                         </div>
                                     </div>
 
-	                                 <?php echo form_close();?>
+	                
 	                           
 	                        </div>
 	                    </div>
@@ -128,7 +136,31 @@
 	        </div>
 	    </div>
     </div>
-    
+    <script type="text/javascript">
+    function confirmSearch()
+    {
+        var from = document.getElementById("s_from");
+        var from_string = from.options[from.selectedIndex].text;
+        var to = document.getElementById("s_to");
+        var to_string = to.options[to.selectedIndex].text;
+        var nop = document.getElementById("s_num");
+        var nop_string = nop.options[nop.selectedIndex].text;
+        if(from_string == to_string)
+        {
+            alert("You selected the same place for both fields, please choose different places");
+        }
+        else
+        {
+            var current_url = window.location.href;
+            var new_url = 'Flights/' + from_string + '/' + to_string + '/' + nop_string + '/';
+            if(current_url.includes("Search/"))
+                current_url = current_url.replace("Search/index", new_url);
+            else
+                current_url = current_url.replace("Search/index", new_url);
+            window.location.href = current_url;
+        }
+    }
+</script>
+
     </body>
 </html>
-
