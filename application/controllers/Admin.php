@@ -51,6 +51,7 @@ class Admin extends CI_Controller {
 			'city_from' => $this->input->post('city_from'),
 			'city_to' => $this->input->post('city_to'),
 			'time' => $this->input->post('time'),
+			'artime' => $this->input->post('artime'),
 			'price' => $this->input->post('price')
 		);
 		$insert = $this->admin_database->insertNewFlight($data);
@@ -69,7 +70,10 @@ class Admin extends CI_Controller {
 		// $data = $result->result();
 		// var_dump($data[0]->fid);
 		// die;
+		$this->load->view('templates/header');
+
 		$this->load->view('edit',['data' => $result->result()]);
+		$this->load->view('templates/footer');
 		// die;
 	}
 	// update flight information after edditing
@@ -80,6 +84,7 @@ class Admin extends CI_Controller {
 			'city_from' => $this->input->post('city_from'),
 			'city_to' => $this->input->post('city_to'),
 			'time' => $this->input->post('time'),
+			'artime' => $this->input->post('artime'),
 			'price' => $this->input->post('price')
 		);
 		$update = $this->admin_database->updateflight($data,$fid);
@@ -110,3 +115,5 @@ class Admin extends CI_Controller {
 		$this->load->view('admin');
 	}
 }
+
+?>
