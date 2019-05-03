@@ -58,8 +58,8 @@ input[type=number]::-webkit-outer-spin-button {
         $result2 = $this->user_database->get_booked_flight($result[0]['UID']);     
         for ($i=0; $i<count($result2); ++$i) {
                         $result3 = $this->admin_database->getFlightdata($result2[$i]['fid']);
-                       
-                        $result4 = $result3;
+                       	if(!empty($result3)){
+                        $result4 = $result3->result_array();
                         echo "<tr>";
                         echo "<td>" . $result4[0]['city_from']. "</td>";
                         echo "<td>" . $result4[0]['city_to']. "</td>";
@@ -67,6 +67,7 @@ input[type=number]::-webkit-outer-spin-button {
                         echo "<td>" . $result4[0]['artime']. "</td>";
                         echo "<td>" . $result4[0]['price']*$result2[$i]['numberOfSeats']. "</td>";
                         echo "</tr>";   
+			};
                 }
         
 ?>

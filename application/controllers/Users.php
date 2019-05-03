@@ -22,7 +22,9 @@
                         $this->load->view('user_edit',['data' => $result->result()]);
                 }
                 public function user(){
+			$this->load->view('templates/header');
                         $this->load->view('UserPage');
+			$this->load->view('templates/footer');
                 }
         }
 ?>
