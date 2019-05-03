@@ -37,6 +37,7 @@ Class user_database extends CI_Model {
                 $condition = "UID="."'".$id."'";
                 $this->db->select('*');
                 $this->db->from('userflight');
+                $this->db->where($condition);
                 $query = $this->db->get();
                 if ($query->num_rows() > 0){
                         return $query->result_array();

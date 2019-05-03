@@ -55,7 +55,7 @@ input[type=number]::-webkit-outer-spin-button {
         echo '<centered> <h4>Address : '.$result[0]['ADDRESS'] .'</h4></centered>';
         echo ' <centered> <h4> Postal Code : '.$result[0]['PCODE'].'</h4></centered>' ;
         echo '<table> <thead> <tr> <th>Departure city</th> <th>Arrival city</th> <th>Departure Time</th> <th>Arrival Time</th> <th>price</th> </tr> </thead>';
-        $result2 = $this->user_database->get_booked_flight($result[0]['UID']);       
+        $result2 = $this->user_database->get_booked_flight($result[0]['UID']);     
         for ($i=0; $i<count($result2); ++$i) {
                         $result3 = $this->admin_database->getFlightdata($result2[$i]['fid']);
                        
