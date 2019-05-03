@@ -24,7 +24,7 @@ class Search extends CI_Controller
     {
         parent::__construct();
        
-        $this->load->model('flight_model');
+        $this->load->model('Flight_model');
         
     }
 
@@ -46,8 +46,8 @@ class Search extends CI_Controller
     public function index($method = null, array $args = null)
     {
         $data['title'] = 'Please fill in the details for your flight';
-        $data['cityfrom'] = $this->flight_model->get_all_city_from();
-        $data['cityto'] = $this->flight_model->get_all_city_to();
+        $data['cityfrom'] = $this->Flight_model->get_all_city_from();
+        $data['cityto'] = $this->Flight_model->get_all_city_to();
         
         $this->load->view('templates/header');
         $this->load->view('search', $data);

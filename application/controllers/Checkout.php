@@ -39,7 +39,7 @@ class Checkout extends CI_Controller
             // no arguments in url, redirect to /search/
             echo 'Bad url<br>';
         } else {
-            if($this->flight_model->flight_exists($method, $args[0], $args[2]) === TRUE)
+            if($this->Flight_model->flight_exists($method, $args[0], $args[2]) === TRUE)
             {
                 $success = TRUE;
             } else {
