@@ -40,7 +40,7 @@ input[type=number]::-webkit-outer-spin-button {
                                     </div>
                                     <div class="paywall__auth__form__row"><h3>Arrival City</h3>
 	                                        <div class="paywall__auth__form__input-wrap paywall__auth__form__input-wrap_radius">
-	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="city_from" placeholder="Enter Departure City" required >
+	                                           <input class="paywall__auth__form__input js-paywall-auth-input" type="text" name="city_to" placeholder="Enter Arrival City" required >
                                             </div>
                                     </div>
                                     <div class="paywall__auth__form__row"><h3>Departure Time</h3>

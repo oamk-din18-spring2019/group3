@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/group3/';
+$config['base_url'] = 'http://www.students.oamk.fi/~t8phgi00/group3/';
 
 /*
 |--------------------------------------------------------------------------

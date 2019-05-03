@@ -23,7 +23,7 @@ Class admin_database extends CI_Model {
 		$query = $this->db->get();
 		if ($query->num_rows() > 0) 
 		{
-			return $query->result_array();
+			return $query;
 		}else{
 			return false;
 		}
