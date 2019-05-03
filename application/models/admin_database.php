@@ -1,6 +1,6 @@
 <?php
 
-Class Admin_Database extends CI_Model {
+Class admin_database extends CI_Model {
 
 	public function flights(){
 		$this->db->select('*');
