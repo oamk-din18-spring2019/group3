@@ -1,6 +1,6 @@
 <?php
 
-class flight_model extends CI_Model
+class Flight_model extends CI_Model
 {
     public function __construct()
     {

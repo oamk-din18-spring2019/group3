@@ -32,7 +32,7 @@ class Flights extends CI_Controller
         {
             $data['times'] = FALSE;
         } else {
-            $success = $data['flights'] = $this->flight_model->get_flights($method, $args[0]);
+            $success = $data['flights'] = $this->Flight_model->get_flights($method, $args[0]);
         }
                 // This block handles the number of passengers
                 if(count($args) < 2)
